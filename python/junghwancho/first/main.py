@@ -1,4 +1,6 @@
 # This is a sample Python script.
+from account.entity.account import Account
+
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
@@ -12,5 +14,12 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
+    account = Account("hello", "hello")
+    print(account)
+
+    account.setAccountId("is this bloody shit working ?")
+    account.setPassword("yeah, it is bloody hell")
+    print(account)
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
