@@ -5,6 +5,7 @@
 
 account_manager global_account_manager;
 
+
 void init_account_manager_object(void)
 {
     // 구조체를 사용할 때 포인터 변수는 '->' 로 접근

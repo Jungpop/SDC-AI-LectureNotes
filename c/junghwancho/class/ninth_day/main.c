@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
+#include <tgmath.h>
 
 // 과제
 // x, y, z, 벡터가 존재
