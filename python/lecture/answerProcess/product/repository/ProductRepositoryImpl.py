@@ -80,6 +80,7 @@ class ProductRepositoryImpl(ProductRepository):
             session.delete(product)
             session.commit()
 
+
     def findByUserInputKeyword(self, keyword):
         dbSession = sessionmaker(bind=self.__instance.engine)
         session = dbSession()
