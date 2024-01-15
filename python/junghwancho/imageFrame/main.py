@@ -1,5 +1,4 @@
 import tkinter
-from tkinter import PhotoImage
 from PIL import ImageTk, Image
 
 
@@ -20,12 +19,15 @@ class CardGameApp:
 
         self.current_card = self.card1
 
-        self.card_image = PhotoImage(self.current_card.image_path)
+        # 이미지 로드 및 크기 조절
+        self.original_image = Image.open(self.current_card.image_path)
+        self.resized_image = self.original_image.resize((300, 300), Image.LANCZOS)
+        self.card_image = ImageTk.PhotoImage(self.resized_image)
 
         self.canvas = tkinter.Canvas(self.master, width=300, height=400)
         self.canvas.pack()
 
-        self.canvas.create_image(150, 200, anchor=tkinter.CENTER, image=self.card_image)
+        self.canvas.create_image(150, 150, anchor=tkinter.CENTER, image=self.card_image)
 
         self.label_description = tkinter.Label(self.master, text=self.current_card.description, wraplength=250)
         self.label_description.pack()
@@ -39,7 +41,10 @@ class CardGameApp:
         else:
             self.current_card = self.card1
 
-        self.card_image = PhotoImage(file=self.current_card.image_path)
+        # 이미지 업데이트
+        self.original_image = Image.open(self.current_card.image_path)
+        self.resized_image = self.original_image.resize((300, 300), Image.LANCZOS)
+        self.card_image = ImageTk.PhotoImage(self.resized_image)
         self.canvas.itemconfig(self.canvas.find_all()[0], image=self.card_image)
 
         self.label_description.config(text=self.current_card.description)
